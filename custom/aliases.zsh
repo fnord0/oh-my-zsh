@@ -13,9 +13,25 @@ alias servevnc='/usr/bin/vncserver -depth 24 -geometry 1280x1024 :1'
 alias govnc='/usr/bin/vncviewer -compresslevel 9 -quality 6 -fullscreen'
 alias du='du -c -h'
 alias du1='du --max-depth=1'
+alias dus='du -sckx * | sort -nr' #directories sorted by size
+alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
 alias getip='curl icanhazip.com'
 alias myip='curl whatismyip.org'
 alias gitc='git clone'
+
+# gsh shows the number of commits for the current repos for all developers
+alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
+
+# gu shows a list of all developers and the number of commits they've made
+alias gu="git shortlog | grep -E '^[^ ]'"
+
+# -------------------------------------------------------------------
+# Python virtualenv 
+# -------------------------------------------------------------------
+alias mkenv='mkvirtualenv'
+alias on="workon"
+alias off="deactivate"
+
 alias grep='grep --color=auto'
 alias lsrasc='rasc2 -L'
 alias maek='make'
